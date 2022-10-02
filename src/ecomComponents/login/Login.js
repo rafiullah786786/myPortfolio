@@ -34,7 +34,7 @@ function Login(props) {
       .then((res) => {
         localStorage.setItem("token", res.data.idToken);
         props.propsdata(true);
-        toast.success("successfully login", {
+        toast.success("successfully login feel free to use my website", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -48,7 +48,7 @@ function Login(props) {
       .catch((err) => {
         console.log(err);
 
-        toast.error(" Wow so easy!", {
+        toast.error(" your email or password is incorrect", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,

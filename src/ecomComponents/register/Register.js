@@ -29,8 +29,7 @@ function Register() {
         }
       )
       .then((res) => {
-        console.log(res.data.email);
-        toast.success(res.data.email, {
+        toast.success("you are logged in successfully", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -44,7 +43,7 @@ function Register() {
       .catch((err) => {
         console.log(err.response.data.error.errors[0].message);
 
-        toast.error(" Wow so easy!", {
+        toast.error(" password must be 6 characters | fill carefully!", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -65,36 +64,6 @@ function Register() {
           <form onSubmit={submitHandler}>
             <h1>Sign Up Here</h1>
             <div class="form-group mt-5">
-              <label htmlFor="exampleInputEmail1">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter Name"
-                value={email}
-                onChange={emailHandler}
-              />
-              <label htmlFor="exampleInputEmail1">Father Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter Father Name"
-                value={email}
-                onChange={emailHandler}
-              />
-              <label htmlFor="exampleInputEmail1">Address</label>
-              <input
-                type="text"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter Address"
-                value={email}
-                onChange={emailHandler}
-              />
               <label htmlFor="exampleInputEmail1">Email address</label>
               <input
                 type="email"
