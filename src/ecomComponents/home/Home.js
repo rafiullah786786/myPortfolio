@@ -2,29 +2,22 @@ import React, { memo, useEffect, useState } from "react";
 import classes from "../products/Products.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/login");
-    } else {
-      axios
-        .get("https://fakestoreapi.com/products/category/electronics", {
-          headers: {
-            token: localStorage.getItem("token"),
-          },
-        })
-        .then((res) => {
-          setProducts(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+    axios
+      .get("https://fakestoreapi.com/products/category/electronics", {
+        headers: {
+          token: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setProducts(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [navigate]);
   return (
     <div>
